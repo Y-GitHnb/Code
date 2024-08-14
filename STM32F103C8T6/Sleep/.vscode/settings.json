@@ -1,0 +1,9 @@
+{
+	"files.associations": {
+		"usart.h": "c",
+		"gpio.h": "c",
+		"main.h": "c",
+		"stdio.h": "c"
+	},
+	"idf.flashType": "JTAG"
+}
