@@ -22,6 +22,15 @@
 
 /* USER CODE BEGIN 0 */
 
+// USART1
+uint8_t UART1_data = 0;
+
+uint8_t UART1_Rx_Buf[UART1_Rx_COUNT] = {0};
+volatile uint8_t UART1_Rx_cnt = 0;
+volatile uint8_t UART1_Rx_flag = 0;
+
+uint8_t UART1_Tx_Buf[UART1_Tx_COUNT] = {0};
+
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart1;
@@ -51,6 +60,9 @@ void MX_USART1_UART_Init(void)
 		Error_Handler();
 	}
 	/* USER CODE BEGIN USART1_Init 2 */
+
+	__HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);
+	__HAL_UART_ENABLE_IT(&huart1, UART_IT_IDLE);
 
 	/* USER CODE END USART1_Init 2 */
 }
@@ -138,5 +150,36 @@ int fputc(int ch, FILE *f)
 }
 
 #endif
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+	if (huart->Instance == USART1)
+	{
+		if (UART1_Rx_cnt < UART1_Rx_COUNT - 1)
+		{
+			UART1_Rx_Buf[UART1_Rx_cnt] = UART1_data;
+			UART1_Rx_cnt++;
+		}
+		else
+		{
+			UART1_Rx_cnt = 0;
+			UART1_Rx_Buf[UART1_Rx_cnt] = UART1_data;
+			UART1_Rx_cnt++;
+		}
+
+		HAL_UART_Receive_IT(&huart1, &UART1_data, REC_LENGTH);
+	}
+}
+
+void USART_Close(void)
+{
+	if (UART1_Rx_flag)
+	{
+		HAL_UART_Transmit(&huart1, UART1_Rx_Buf, UART1_Rx_cnt, 0x10);
+		memset(UART1_Rx_Buf, 0, sizeof(UART1_Rx_Buf));
+		UART1_Rx_cnt = 0;
+		UART1_Rx_flag = 0;
+	}
+}
 
 /* USER CODE END 1 */

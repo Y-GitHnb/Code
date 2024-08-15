@@ -32,6 +32,7 @@ extern "C"
 	/* USER CODE BEGIN Includes */
 
 #include "stdio.h"
+#include "string.h"
 
 	/* USER CODE END Includes */
 
@@ -39,11 +40,23 @@ extern "C"
 
 	/* USER CODE BEGIN Private defines */
 
+#define REC_LENGTH 1
+#define UART1_Rx_COUNT 512
+#define UART1_Tx_COUNT 512
+
+	extern uint8_t UART1_data;
+	extern uint8_t UART1_Rx_Buf[UART1_Rx_COUNT];
+	extern volatile uint8_t UART1_Rx_cnt;
+	extern volatile uint8_t UART1_Rx_flag;
+	extern uint8_t UART1_Tx_Buf[UART1_Tx_COUNT];
+
 	/* USER CODE END Private defines */
 
 	void MX_USART1_UART_Init(void);
 
 	/* USER CODE BEGIN Prototypes */
+
+	void USART_manage();
 
 	/* USER CODE END Prototypes */
 

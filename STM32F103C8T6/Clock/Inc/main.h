@@ -43,9 +43,6 @@ extern "C"
 	/* Exported constants --------------------------------------------------------*/
 	/* USER CODE BEGIN EC */
 
-	extern uint16_t time_us;
-	extern uint16_t time_ms;
-
 	/* USER CODE END EC */
 
 	/* Exported macro ------------------------------------------------------------*/

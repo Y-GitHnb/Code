@@ -34,9 +34,6 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-uint16_t time_us = 0;
-uint16_t time_ms = 0;
-
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -92,12 +89,18 @@ int main(void)
 	MX_USART1_UART_Init();
 	/* USER CODE BEGIN 2 */
 
+	printf("USART1 Init");
+	HAL_UART_Receive_IT(&huart1, &UART1_data, REC_LENGTH);
+
 	/* USER CODE END 2 */
 
 	/* Infinite loop */
 	/* USER CODE BEGIN WHILE */
 	while (1)
 	{
+		USART_Close();
+		HAL_Delay(100);
+
 		/* USER CODE END WHILE */
 
 		/* USER CODE BEGIN 3 */
