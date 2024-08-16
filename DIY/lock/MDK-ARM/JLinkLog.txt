@@ -1,0 +1,47 @@
+T4660 815:382.592   SEGGER J-Link V7.98b Log File
+T4660 815:382.656   DLL Compiled: Jul 31 2024 16:10:46
+T4660 815:382.656   Logging started @ 2024-08-11 11:25
+T4660 815:382.656   Process: D:\Keil\Keil MDK\Install\UV4\UV4.exe
+T4660 815:382.656 - 810025.920ms
+T4660 815:382.656 JLINK_SetWarnOutHandler(...)
+T4660 815:382.656 - 0.003ms
+T4660 815:382.656 JLINK_OpenEx(...)
+T4660 815:383.744   
+  ***** Error: 
+T4660 815:383.744   Cannot connect to J-Link.
+T4660 815:383.808 - 1.156ms returns "Cannot connect to J-Link."
+T4660 815:383.936 
+  ***** Warning: 
+T4660 815:383.936 API Error: API JLINK_GetHardwareVersion function called before JLINKARM_Open()
+T4660 815:383.936 JLINK_GetHardwareVersion()
+T4660 815:385.216   
+  ***** Error: 
+T4660 815:385.216   Cannot connect to J-Link.
+T4660 815:385.216 - 1.265ms
+T4660 817:421.888 JLINK_IsOpen()
+T4660 817:421.888 - 0.021ms returns 0x00
+T4660 817:421.952 JLINK_EMU_SelectByUSBSN(SerialNo = 0)
+T4660 817:422.592 - 0.690ms returns 0xFFFFFFFF
+T4660 817:422.592 JLINK_EnableLog(...)
+T4660 817:422.592 - 0.003ms
+T4660 817:422.592 JLINK_SetLogFile(...)
+T4660 817:422.592 - 0.003ms
+T4660 817:422.592 JLINK_SetWarnOutHandler(...)
+T4660 817:422.656 - 0.003ms
+T4660 817:422.656 JLINK_OpenEx(...)
+T4660 817:423.744   
+  ***** Error: 
+T4660 817:423.744   Cannot connect to J-Link.
+T4660 817:423.744 - 1.118ms returns "Cannot connect to J-Link."
+T4660 817:423.872 
+  ***** Warning: 
+T4660 817:423.872 API Error: API JLINK_GetHardwareVersion function called before JLINKARM_Open()
+T4660 817:423.936 JLINK_GetHardwareVersion()
+T4660 817:424.960   
+  ***** Error: 
+T4660 817:424.960   Cannot connect to J-Link.
+T4660 817:424.960 - 1.071ms
+T4660 819:418.624 JLINK_Close()
+T4660 819:418.688 - 0.073ms
+T4660 819:418.688   
+T4660 819:418.688   Closed
